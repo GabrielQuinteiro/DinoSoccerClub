@@ -16,6 +16,7 @@ typedef struct {
 void insert_left(Node* node, char* data);
 void insert_right(Node* node, char* data);
 void insert(Bin_tree* tree, char* data);
+Node* inserir(Node* root, char* data);
 
 void print_tree(Node* node);
 

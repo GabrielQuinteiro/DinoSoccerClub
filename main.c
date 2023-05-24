@@ -22,7 +22,8 @@ int main()
 		case 1:
 			printf("Digite um valor: ");
 			scanf("%s", &data);
-			insert(&tree, data);
+			tree.root = inserir(tree.root, data);
+			//insert(&tree, data);
 			break;
 		case 2:
 			printf("\nImpressão da Árvore Binária: \n");

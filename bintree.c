@@ -8,7 +8,7 @@ static Node* insert_sub(char* data) {
 	strcpy(&new_node->data, data);
 	return new_node;
 }
-
+/* 
 void insert_left(Node* node, char* data)
 {
 	if (node->left == NULL)
@@ -70,6 +70,33 @@ void insert(Bin_tree* tree, char* data)
 		{
 			insert_right(tree->root, data);
 		}
+	}
+}*/
+
+Node* inserir(Node* root, char* data)
+{
+	if (root == NULL)
+	{
+		Node* new_node = insert_sub(data);
+	}
+	else
+	{
+		int compare = strcmp(data, root->data);
+		if (compare < 0)
+		{
+			root->left = inserir(root->left, data);
+			
+		}
+		else if (compare > 0)
+		{
+			root->right = inserir(root->right, data);
+		}
+		else
+		{
+			printf("Já existe");
+		}
+
+		return root;
 	}
 }
 
