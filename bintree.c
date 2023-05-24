@@ -100,26 +100,30 @@ Node* inserir(Node* root, char* data)
 	}
 }
 
-int buscar(Node* root, char* data)
+SearchResult buscar(Node* root, char* data)
 {
+	SearchResult result = { 0 };
+
 	if (root == NULL)
 	{
-		return -1;
+		return result;
 	}
 	else
 	{
 		int compare = strcmp(data, root->data);
 		if (compare == 0)
 		{
-			return 1;
+			result.found = 1;
+			result.data = malloc(strlen(root->data) + 1);  // aloca memória para a string
+			strcpy(result.data, root->data);
+			return result;
+		}
+		else if (compare < 0)
+		{
+			return buscar(root->left, data);
 		}
 		else
-		{
-			if (compare < 0)
-				return buscar(root->left, data);
-			else
-				return buscar(root->right, data);
-		}
+			return buscar(root->right, data);
 	}
 }
 
