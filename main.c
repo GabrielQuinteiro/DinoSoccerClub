@@ -13,7 +13,8 @@ int main()
 	{
 		printf("\n0 - Sair\n1 - Inserir\n2 - Imprimir\n3 - Buscar por nome\n");
 		scanf("%d", &op);
-		fflush(stdin);
+		getchar();
+
 
 		switch (op)
 		{
@@ -23,7 +24,7 @@ int main()
 
 		case 1:
 			printf("Digite um valor: ");
-			scanf("%255[^\n]", data);
+			scanf("%256[^\n]", &data);
 			tree.root = inserir(tree.root, data);
 			//insert(&tree, data);
 			break;
@@ -33,7 +34,7 @@ int main()
 			break;
 		case 3:
 			printf("Digite o nome: ");
-			scanf("%255[^\n]", data);
+			scanf("%256[^\n]", &data);
 			result = buscar(tree.root, data);
 			if (result.found)
 				printf("Dado encontrado: %s\n", result.data);
