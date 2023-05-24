@@ -1,12 +1,15 @@
 #ifndef _BINTREE_H_
 #define _BINTREE_H_
 
-typedef struct node{
-	char* data;
+#define MAX_CHAR 256
+
+typedef struct node {
+	//Precisa limitar uma quantidade fixa de caracters, sen�o vai ter que fazer aloca��o din�mica!
+	char data[MAX_CHAR];
 	struct node* left, * right;
 }Node;
 
-typedef struct{
+typedef struct {
 	Node* root;
 }Bin_tree;
 

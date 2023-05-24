@@ -15,21 +15,21 @@ int main()
 
 		switch (op)
 		{
-			case 0:
-				printf("\nSaindo...\n");
+		case 0:
+			printf("\nSaindo...\n");
 			break;
 
-			case 1:
-				printf("Digite um valor: ");
-				scanf("%s", &data);
-				insert(&tree, data);
+		case 1:
+			printf("Digite um valor: ");
+			scanf("%s", &data);
+			insert(&tree, data);
 			break;
-			case 2:
-				printf("\nImpressão da Árvore Binária: \n");
-				print_tree(tree.root);
-				break;
-			default:
-				printf("\nOpção invalida\n");
+		case 2:
+			printf("\nImpressão da Árvore Binária: \n");
+			print_tree(tree.root);
+			break;
+		default:
+			printf("\nOpção invalida\n");
 		}
 	} while (op != 0);
 
