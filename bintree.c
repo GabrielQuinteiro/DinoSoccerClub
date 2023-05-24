@@ -100,6 +100,29 @@ Node* inserir(Node* root, char* data)
 	}
 }
 
+int buscar(Node* root, char* data)
+{
+	if (root == NULL)
+	{
+		return -1;
+	}
+	else
+	{
+		int compare = strcmp(data, root->data);
+		if (compare == 0)
+		{
+			return 1;
+		}
+		else
+		{
+			if (compare < 0)
+				return buscar(root->left, data);
+			else
+				return buscar(root->right, data);
+		}
+	}
+}
+
 void print_tree(Node* node)
 {
 	if (node != NULL)
