@@ -46,36 +46,31 @@ Node* inserir(Node* root, Dino* dino)
 	}
 }
 
-/* SearchResult buscar(Node* root, char* data)
+Node* buscar(Node* root, char* nome_jogador)
 {
-	SearchResult result = { 0 };
-
 	if (root == NULL)
 	{
-		return result;
+		return root;
 	}
 	else
 	{
-		int compare = strcmp(data, root->data);
+		int compare = strcmp(nome_jogador, root->dino->nome);
 		if (compare == 0)
 		{
-			result.found = 1;
-			result.data = malloc(strlen(root->data) + 1);  // aloca memória para a string
-			strcpy(result.data, root->data);
-			return result;
+			return root;
 		}
 		else if (compare < 0)
 		{
-			return buscar(root->left, data);
+			return buscar(root->left, nome_jogador);
 		}
 		else
-			return buscar(root->right, data);
+			return buscar(root->right, nome_jogador);
 	}
 }
-*/
+
 void print_dino(Dino* dino) 
 {
-	printf("Nome: %s | Posicao: %s | Idade: %d | Habilidade: %d | Camisa: %d ", dino->nome, dino->posicao, dino->idade, dino->habilidade, dino->camisa);
+	printf("Nome: %s | Posicao: %s | Idade: %d | Habilidade: %d | Camisa: %d \n", dino->nome, dino->posicao, dino->idade, dino->habilidade, dino->camisa);
 	
 }
 

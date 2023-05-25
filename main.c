@@ -6,8 +6,8 @@ int main()
 	int opcao;
 	Dino* dino;
 	Bin_tree tree;
-	SearchResult result;
 	tree.root = NULL;
+	Node* result;
 
 	do
 	{
@@ -31,13 +31,12 @@ int main()
 		getchar();
 
 
-		switch (opcao)
+		if (opcao == 0)
 		{
-		case 0:
 			printf("\nSaindo...\n");
-			break;
-
-		case 1:
+		}
+		else if (opcao == 1)
+		{
 			dino = malloc(sizeof(Dino));
 			printf("\nDigite o nome: ");
 			scanf("%256[^\n]", dino->nome);
@@ -54,25 +53,28 @@ int main()
 			printf("\n");
 
 			tree.root = inserir(tree.root, dino);
-			//insert(&tree, data);
-			break;
-		case 2:
+		}
+		else if (opcao == 2)
+		{
 			printf("\n\nLista de Jogadores: \n\n");
 			print_tree(tree.root);
 			printf("\n");
-			break;
-		case 3:
-			/* printf("Digite o nome: ");
-			scanf("%256[^\n]", &data);
-			result = buscar(tree.root, data);
-			if (result.found)
-				printf("Dado encontrado: %s\n", result.data);
+		}
+		else if (opcao == 3)
+		{
+			char nome_jogador[MAX_CHAR];
+			printf("\nDigite o nome do jogador que deseja buscar: ");
+			scanf("%256[^\n]", &nome_jogador);
+			getchar();
+
+			result = buscar(tree.root, nome_jogador);
+			if (result)
+				print_dino(result->dino);
 			else
-				printf("Dado não encontrado.\n");
-			*/
-			break;
-			
-		default:
+				printf("Jogador %s não encontrado.\n", nome_jogador);
+		}
+		else
+		{
 			printf("\nOpção invalida\n");
 		}
 	} while (opcao != 0);

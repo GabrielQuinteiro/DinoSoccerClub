@@ -22,16 +22,14 @@ typedef struct {
 
 typedef struct search_result {
 	int found;
-	char* data;
+	char* nome;
 } SearchResult;
 
-void insert_left(Node* node, char* data);
-void insert_right(Node* node, char* data);
 void insert(Bin_tree* tree, char* data);
 Node* inserir(Node* root, char* data);
 
 void print_tree(Node* node);
 
-SearchResult buscar(Node* root, char* data);
+Node* buscar(Node* root, char* data);
 
 #endif // !_BINTREE_H_
