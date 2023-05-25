@@ -1,16 +1,13 @@
 #include "bintree.h"
 #include <string.h>
 
-//Fun��es est�ticas s� funcionam dentro desse arquivo
+//Funcoes estaticas so funcionam dentro desse arquivo
 static Node* insert_sub(Dino* dino) {
 	Node* new_node = (Node*)malloc(sizeof(Node));
-	//memset(new_node, 0, sizeof(Node));
-	//strcpy(&new_node->dino->nome, dino.nome);
 	if (new_node)
 	{
-		new_node->dino = dino;
-		new_node->left = NULL;
-		new_node->right = NULL;
+		memset(new_node, 0, sizeof(Node));
+		new_node->dino = dino;		
 	}
 	else
 	{

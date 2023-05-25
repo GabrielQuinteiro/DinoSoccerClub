@@ -20,16 +20,8 @@ typedef struct {
 	Node* root;
 }Bin_tree;
 
-typedef struct search_result {
-	int found;
-	char* nome;
-} SearchResult;
-
-void insert(Bin_tree* tree, char* data);
 Node* inserir(Node* root, char* data);
-
 void print_tree(Node* node);
-
 Node* buscar(Node* root, char* data);
 
 #endif // !_BINTREE_H_
