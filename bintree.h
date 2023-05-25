@@ -3,9 +3,16 @@
 
 #define MAX_CHAR 256
 
+typedef struct {
+	char nome[MAX_CHAR];
+	char posicao[MAX_CHAR];
+	int idade;
+	int habilidade;
+	int camisa;
+}Dino;
+
 typedef struct node {
-	//Precisa limitar uma quantidade fixa de caracters, sen�o vai ter que fazer aloca��o din�mica!
-	char data[MAX_CHAR];
+	Dino* dino;
 	struct node* left, * right;
 }Node;
 

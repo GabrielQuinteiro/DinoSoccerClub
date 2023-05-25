@@ -3,49 +3,79 @@
 
 int main()
 {
-	int op;
-	char data[MAX_CHAR];
+	int opcao;
+	Dino* dino;
 	Bin_tree tree;
 	SearchResult result;
 	tree.root = NULL;
 
 	do
 	{
-		printf("\n0 - Sair\n1 - Inserir\n2 - Imprimir\n3 - Buscar por nome\n");
-		scanf("%d", &op);
+		printf("*******************************************************\n");
+		printf("*                    DinoSoccerClub                   *\n");
+		printf("*******************************************************\n");
+
+		printf("=======================================================\n");
+		printf("|                 Escolha uma opção                   |\n");
+		printf("|=====================================================|\n");
+		printf("| 1. Inserir                                          |\n");
+		printf("|-----------------------------------------------------|\n");
+		printf("| 2. Imprimir                                         |\n");
+		printf("|-----------------------------------------------------|\n");
+		printf("| 3. Buscar por nome                                  |\n");
+		printf("|-----------------------------------------------------|\n");
+		printf("| 0. Sair                                             |\n");
+		printf("=======================================================\n");
+		printf("Digite sua opção: ");
+		scanf("%d", &opcao);
 		getchar();
 
 
-		switch (op)
+		switch (opcao)
 		{
 		case 0:
 			printf("\nSaindo...\n");
 			break;
 
 		case 1:
-			printf("Digite um valor: ");
-			scanf("%256[^\n]", &data);
-			tree.root = inserir(tree.root, data);
+			dino = malloc(sizeof(Dino));
+			printf("\nDigite o nome: ");
+			scanf("%256[^\n]", dino->nome);
+			getchar();
+			printf("Infomre a posição: ");
+			scanf("%256[^\n]", dino->posicao);
+			getchar();
+			printf("Digite a idade: ");
+			scanf("%d", &dino->idade);
+			printf("Informe a habilidade: ");
+			scanf("%d", &dino->habilidade);
+			printf("Informe o numero da camiseta: ");
+			scanf("%d", &dino->camisa);
+			printf("\n");
+
+			tree.root = inserir(tree.root, dino);
 			//insert(&tree, data);
 			break;
 		case 2:
-			printf("\nImpressão da Árvore Binária: \n");
+			printf("\n\nLista de Jogadores: \n\n");
 			print_tree(tree.root);
+			printf("\n");
 			break;
 		case 3:
-			printf("Digite o nome: ");
+			/* printf("Digite o nome: ");
 			scanf("%256[^\n]", &data);
 			result = buscar(tree.root, data);
 			if (result.found)
 				printf("Dado encontrado: %s\n", result.data);
 			else
 				printf("Dado não encontrado.\n");
+			*/
 			break;
-
+			
 		default:
 			printf("\nOpção invalida\n");
 		}
-	} while (op != 0);
+	} while (opcao != 0);
 
 	return 0;
 }
