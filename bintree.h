@@ -20,8 +20,12 @@ typedef struct {
 	Node* root;
 }Bin_tree;
 
+void formulario_dino(Dino* dino);
 Node* inserir(Node* root, char* data);
+
+void print_dino(Dino* dino);
 void print_tree(Node* node);
+
 Node* buscar(Node* root, char* data);
 
 #endif // !_BINTREE_H_

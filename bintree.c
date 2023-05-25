@@ -1,6 +1,24 @@
 #include "bintree.h"
 #include <string.h>
 
+void formulario_dino(Dino* dino)
+{
+	memset(dino, 0, sizeof(Dino));
+	printf("\nDigite o nome: ");
+	scanf("%256[^\n]", dino->nome);
+	getchar();
+	printf("Infomre a posição: ");
+	scanf("%256[^\n]", dino->posicao);
+	getchar();
+	printf("Digite a idade: ");
+	scanf("%d", &dino->idade);
+	printf("Informe a habilidade: ");
+	scanf("%d", &dino->habilidade);
+	printf("Informe o numero da camiseta: ");
+	scanf("%d", &dino->camisa);
+	printf("\n");
+}
+
 //Funcoes estaticas so funcionam dentro desse arquivo
 static Node* insert_sub(Dino* dino) {
 	Node* new_node = (Node*)malloc(sizeof(Node));
@@ -36,7 +54,7 @@ Node* inserir(Node* root, Dino* dino)
 		}
 		else
 		{
-			printf("Já existe");
+			printf("\nDinossauro já cadastrado\n");
 		}
 
 		return root;

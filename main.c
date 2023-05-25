@@ -37,21 +37,9 @@ int main()
 		}
 		else if (opcao == 1)
 		{
-			dino = malloc(sizeof(Dino));
-			printf("\nDigite o nome: ");
-			scanf("%256[^\n]", dino->nome);
-			getchar();
-			printf("Infomre a posição: ");
-			scanf("%256[^\n]", dino->posicao);
-			getchar();
-			printf("Digite a idade: ");
-			scanf("%d", &dino->idade);
-			printf("Informe a habilidade: ");
-			scanf("%d", &dino->habilidade);
-			printf("Informe o numero da camiseta: ");
-			scanf("%d", &dino->camisa);
-			printf("\n");
-
+			dino = (Dino*)malloc(sizeof(Dino));
+			formulario_dino(dino);
+			
 			tree.root = inserir(tree.root, dino);
 		}
 		else if (opcao == 2)
