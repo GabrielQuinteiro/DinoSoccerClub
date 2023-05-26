@@ -7,7 +7,7 @@ void formulario_dino(Dino* dino)
 	printf("\nDigite o nome: ");
 	scanf("%256[^\n]", dino->nome);
 	getchar();
-	printf("Infomre a posição: ");
+	printf("Infomre a posicao: ");
 	scanf("%256[^\n]", dino->posicao);
 	getchar();
 	printf("Digite a idade: ");

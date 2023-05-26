@@ -16,7 +16,7 @@ int main()
 		printf("*******************************************************\n");
 
 		printf("=======================================================\n");
-		printf("|                 Escolha uma opção                   |\n");
+		printf("|                 Escolha uma opcao                   |\n");
 		printf("|=====================================================|\n");
 		printf("| 1. Inserir                                          |\n");
 		printf("|-----------------------------------------------------|\n");
@@ -26,7 +26,7 @@ int main()
 		printf("|-----------------------------------------------------|\n");
 		printf("| 0. Sair                                             |\n");
 		printf("=======================================================\n");
-		printf("Digite sua opção: ");
+		printf("Digite sua opcao: ");
 		scanf("%d", &opcao);
 		getchar();
 
@@ -59,11 +59,11 @@ int main()
 			if (result)
 				print_dino(result->dino);
 			else
-				printf("Jogador %s não encontrado.\n", nome_jogador);
+				printf("Jogador %s nao encontrado.\n", nome_jogador);
 		}
 		else
 		{
-			printf("\nOpção invalida\n");
+			printf("\nOpcao invalida\n");
 		}
 	} while (opcao != 0);
 
