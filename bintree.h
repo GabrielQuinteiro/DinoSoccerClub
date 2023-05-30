@@ -1,6 +1,14 @@
 #ifndef _BINTREE_H_
 #define _BINTREE_H_
 
+#ifdef __unix__
+#include <stdlib.h>
+#include <unistd.h>
+
+#elif defined(_WIN32) || defined(WIN32)
+#define OS_Windows
+#endif
+
 #define MAX_CHAR 256
 
 typedef struct {
@@ -21,11 +29,13 @@ typedef struct {
 }Bin_tree;
 
 void formulario_dino(Dino* dino);
-Node* inserir(Node* root, char* data);
+Node* inserir(Node* root, Dino* dino);
+
+Node* buscar(Node* root, char* nome_jogador);
+Node* remover(Node* root, char* nome_jogador);
 
 void print_dino(Dino* dino);
 void print_tree(Node* node);
 
-Node* buscar(Node* root, char* data);
 
 #endif // !_BINTREE_H_
