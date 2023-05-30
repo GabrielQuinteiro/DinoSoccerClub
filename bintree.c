@@ -30,7 +30,7 @@ static Node* insert_sub(Dino* dino) {
 	if (new_node)
 	{
 		memset(new_node, 0, sizeof(Node));
-		new_node->dino = dino;		
+		new_node->dino = dino;
 	}
 	else
 	{
@@ -51,7 +51,7 @@ Node* inserir(Node* root, Dino* dino)
 		if (compare < 0)
 		{
 			root->left = inserir(root->left, dino);
-			
+
 		}
 		else if (compare > 0)
 		{
@@ -92,7 +92,7 @@ Node* remover(Node* root, char* nome_jogador)
 {
 	if (root == NULL)
 	{
-		printf("Jogador nao encontrado.");
+		printf("\nJogador %s nao encontrado.\n", nome_jogador);
 		return NULL;
 	}
 	else
@@ -131,7 +131,7 @@ Node* remover(Node* root, char* nome_jogador)
 						aux = aux->right;
 					}
 
-					Dino* d; 
+					Dino* d;
 					d = root->dino;
 					root->dino = aux->dino;
 					aux->dino = d;
@@ -153,10 +153,10 @@ Node* remover(Node* root, char* nome_jogador)
 	}
 }
 
-void print_dino(Dino* dino) 
+void print_dino(Dino* dino)
 {
 	printf("Nome: %s | Posicao: %s | Idade: %d | Habilidade: %d | Camisa: %d \n", dino->nome, dino->posicao, dino->idade, dino->habilidade, dino->camisa);
-	
+
 }
 
 void print_tree(Node* node)

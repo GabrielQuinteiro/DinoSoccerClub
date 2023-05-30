@@ -19,11 +19,11 @@ int main()
 
 	do
 	{
-		#ifdef OS_Windows
+#ifdef OS_Windows
 		system("cls");
-		#else
+#else
 		system("clear");
-		#endif
+#endif
 
 		printf("*******************************************************\n");
 		printf("*                    DinoSoccerClub                   *\n");
@@ -57,34 +57,34 @@ int main()
 		{
 			dino = (Dino*)malloc(sizeof(Dino));
 			formulario_dino(dino);
-			
+
 			tree.root = inserir(tree.root, dino);
-			
+
 			printf("Jogador salvo com sucesso!\n\n");
 
-			#ifdef OS_Windows
+#ifdef OS_Windows
 			system("pause");
-			#else
+#else
 			system("echo 'Pressione enter para continuar...'; read dummy;");
-			#endif
+#endif
 		}
 		else if (opcao == 2)
 		{
-			#ifdef OS_Windows
+#ifdef OS_Windows
 			system("cls");
-			#else
+#else
 			system("clear");
-			#endif
+#endif
 
 			printf("\n\nLista de Jogadores: \n\n");
 			print_tree(tree.root);
 			printf("\n");
 
-			#ifdef OS_Windows
+#ifdef OS_Windows
 			system("pause");
-			#else
+#else
 			system("echo 'Pressione enter para continuar...'; read dummy;");
-			#endif
+#endif
 		}
 		else if (opcao == 3)
 		{
@@ -93,11 +93,11 @@ int main()
 			scanf("%256[^\n]", &nome_jogador);
 			getchar();
 
-			#ifdef OS_Windows
+#ifdef OS_Windows
 			system("cls");
-			#else
+#else
 			system("clear");
-			#endif
+#endif
 			result = buscar(tree.root, nome_jogador);
 			if (result)
 				print_dino(result->dino);
@@ -106,11 +106,11 @@ int main()
 
 			printf("\n");
 
-			#ifdef OS_Windows
+#ifdef OS_Windows
 			system("pause");
-			#else
+#else
 			system("echo 'Pressione enter para continuar...'; read dummy;");
-			#endif
+#endif
 		}
 		else if (opcao == 4)
 		{
@@ -120,20 +120,20 @@ int main()
 			getchar();
 
 			remover(tree.root, nome_jogador);
-			#ifdef OS_Windows
+#ifdef OS_Windows
 			system("pause");
-			#else
+#else
 			system("echo 'Pressione enter para continuar...'; read dummy;");
-			#endif
+#endif
 		}
 		else
 		{
 			printf("\nOpção invalida\n");
-			#ifdef OS_Windows
+#ifdef OS_Windows
 			system("pause");
-			#else
+#else
 			system("echo 'Pressione enter para continuar...'; read dummy;");
-			#endif
+#endif
 		}
 	} while (opcao != 0);
 
